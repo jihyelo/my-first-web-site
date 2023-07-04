@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  
+}
+
+#wrapper {
+  margin: 100px auto;
+  text-align: center;
+}
+
+.title { }
+  .title span, .main h2 span {
+    color: #4f91cc;
+    text-shadow: 2px 2px 5px #888;
+  }
+  img.jihye {
+    width:300px;
+    margin: 50px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px #000;
+  }
+
+.main {}
+  .main h2 {
+    margin-bottom: 30px;
+  }
+  .main p {
+    line-height: 2em;
+  }
+  .main p span {
+    font-weight: bold;
+  }
