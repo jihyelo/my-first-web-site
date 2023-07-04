@@ -1,36 +1,294 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
 }
 
 body {
-  
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column wrap;
+  justify-content: space-between;
+  background-color: #fcf9ed;
+  font-size: 16px;
 }
+
+button {
+  position: fixed;
+  bottom: 5%; right: 3%;
+  border-radius: 50%;
+  border:0;
+  background-color: rgba(168, 191, 65, 0.7);
+  z-index: 500;
+}
+  button a {
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: 'Bagel Fat One', cursive;
+    color: #fff;
+    text-shadow: 0.1rem 0.1rem 0.1rem #666;
+    display: block;
+    padding: 10px 10px;
+  }
 
 #wrapper {
-  margin: 100px auto;
-  text-align: center;
+  width: 100%;
+  max-width: 2200px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column wrap;
+  justify-content: space-between;
+  outline: 1px solid red;
 }
 
-.title { }
-  .title span, .main h2 span {
-    color: #4f91cc;
-    text-shadow: 2px 2px 5px #888;
+/* header */
+header { 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height:100vh;
+  min-width: 355px;
+  outline: 1px solid blue
+}
+  /* .navi */
+  .navi {
+    width:100%;
+    min-width: 400px;
+    display: flex;
+    justify-content: center;
   }
-  img.jihye {
-    width:300px;
-    margin: 50px;
-    border-radius: 10px;
-    box-shadow: 3px 3px 10px #000;
+    .navi li {
+      display: inline-block;
+      color:#fff;
+      background-color: rgba(168, 191, 65, 0.7);
+      font-size: 1.5vw;
+      font-family: 'Bagel Fat One', cursive;
+      text-shadow: 0.1rem 0.1rem 0.1rem #666;
+      margin: 1vw 1vw;
+      padding: 3px 10px;
+      border-radius: 1.5rem;
+      box-shadow: 0.2rem 0.2rem 0.5rem #caceb5;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      z-index: 100;
+    }
+    .navi li:hover {
+      background-color: #a4c100;
+      scale: 1.1;
+    }
+
+  /*.navi .main-photo */
+  .main-photo {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+    .main-photo img {
+      width: 30%;
+      min-width: 300px;
+      margin:5% auto;
+      border-radius: 50%;
+      box-shadow: 0.2rem 0.2rem 0.7rem #829678;
+      cursor: pointer;
+      transition: all 0.7s ease-out;
+    }
+    .main-photo img:hover {
+    border-radius: 5%;
+    width: 50%;
+    margin-top: -9%;
+    opacity: 0.8;
+    z-index:200;
+    }
+
+    p.hello {
+      position: absolute;
+      text-align: center;
+      top: -5%; left: 25%;
+      font-size: 8vw;
+      font-family: 'Caprasimo', cursive;
+      line-height: 5vw;
+      color: #fff;
+      text-shadow: 0.1rem 0.1rem 0.2rem #000;
+    }
+
+      /* HELLO 글씨 hover */
+      .main-photo p.hello {
+        opacity: 0;
+        transition: all 0.7s ease-out;
+      }
+
+      header img:hover ~ p.hello {
+        opacity: 0.9;
+        z-index:300;
+      }
+
+/* section 공통 클래스 */
+
+  .title-font { /* .title-font 전부 지정 */
+    display:inline-block;
+    margin: 0 auto;
+    font-size: 4rem;
+    font-family: 'Bagel Fat One', cursive;
+    color: #fff;
+    text-shadow: 0.1rem 0.1rem 0.1rem #666;
+    margin-bottom: 5%;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
   }
 
-.main {}
-  .main h2 {
-    margin-bottom: 30px;
+  .title-font:hover{
+    color: #4f9e0f;
   }
-  .main p {
-    line-height: 2em;
-  }
-  .main p span {
+
+/* #about-me 페이지 */
+#about-me {
+  width: 100%;
+  padding: 10%;
+  background-image: url(./img/background1.jpg);
+  background-size: cover;
+}
+  .about-me-images {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding:3vw;
+    font-size: 1.5vw;
+    font-family: 'Poor Story', cursive;
     font-weight: bold;
+    line-height: 4vw;
+  }
+
+    .about-me-images img:nth-child(1) {
+        width: 25%;
+        box-shadow: 2px 2px 5px #000;
+        margin-right: 10%;
+      }
+    .about-me-images img:nth-child(1):hover {
+      animation: ani 0.5s alternate ease-in;
+    }
+    @keyframes ani {
+      from { transform: rotate(2deg); }
+      30% { transform: rotate(-2deg); }
+      70% { transform: rotate(2deg); }
+      to { transform: rotate(0deg); }
+    }
+
+/* #favorite 페이지 */
+#favorite { 
+    width: 100%;
+    padding: 10% 0;
+    background-image: url(./img/background2.jpg);
+    background-size: cover;
+    text-align: center;
+  }
+  .favorite-images {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+    .favorite-gif {
+      width:20%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      opacity: 1;
+      transition: all 0.5s ease-in-out;
+    }
+
+      .favorite-gif img{
+        width: 100%;
+        height: 20%;
+        border: 0.3rem solid #fff;
+        border-radius: 1rem;
+      }
+      .favorite-gif:hover, .favorite-gif p {
+        scale: 1.2;
+        opacity: 1;
+      }
+
+      .favorite-gif p {
+        font-size: 1.5vw;
+        font-family: 'Caprasimo', cursive;
+        color: #000;
+        opacity: 0.7;
+        margin: 10% 0;
+      }
+
+    /* favorite 페이지 움짤*/
+    /*  1  */
+    .gif1 .animated {
+      display: none;
+    }
+    .gif1:hover .animated {
+      display: inline;
+    }
+    .gif1:hover .static {
+      display: none;
+    }
+    /*  2  */
+    .gif2 .animated {
+      display: none;
+    }
+    .gif2:hover .animated {
+      display: inline;
+    }
+    .gif2:hover .static {
+      display: none;
+    }
+    /*  3  */
+    .gif3 .animated {
+      display: none;
+    }
+    .gif3:hover .animated {
+      display: inline;
+    }
+    .gif3:hover .static {
+      display: none;
+    }
+      /*  4  */
+    .gif4 .animated {
+      display: none;
+    }
+    .gif4:hover .animated {
+      display: inline;
+    }
+    .gif4:hover .static {
+      display: none;
+    }
+
+/* #goals 페이지 */
+#goals { 
+  width: 100%;
+  padding: 10% 0;
+  background-image: url(./img/background3.jpg);
+  background-size: cover;
+  text-align: center;
+}
+  .goals-images {
+    width:100%;
+  }
+    .goals-images img {
+      width:50%;
+      border-radius: 3rem;
+      box-shadow: 2px 2px 5px #666;
+      opacity: 0.8;
+    }
+  
+  #goals p {
+    font-size: 1.5vw;
+    font-family: 'Poor Story', cursive;
+    font-weight: bold;
+    margin: 2% 0;
   }
